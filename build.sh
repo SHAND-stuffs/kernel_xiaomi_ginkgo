@@ -19,6 +19,8 @@ if ! [ -d "$TC_DIR" ]; then
 	fi
 fi
 
+rm -rf KernelSU && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+
 if test -z "$(git rev-parse --show-cdup 2>/dev/null)" &&
    head=$(git rev-parse --verify HEAD 2>/dev/null); then
 	ZIPNAME="${ZIPNAME::-4}-$(echo $head | cut -c1-8).zip"
